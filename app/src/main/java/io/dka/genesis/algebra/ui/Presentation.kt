@@ -13,8 +13,8 @@ import io.dka.genesis.algebra.ui.model.UserViewModel
 
 interface UserView
 {
-    fun showNotFoundError(): Unit
-    fun showGenericError(): Unit
+    fun showNotFoundError()
+    fun showGenericError()
 }
 
 interface UsersListView : UserView

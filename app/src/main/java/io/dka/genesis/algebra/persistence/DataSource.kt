@@ -1,5 +1,6 @@
 package io.dka.genesis.algebra.persistence
 
+import android.support.annotation.VisibleForTesting
 import arrow.HK
 import arrow.TC
 import arrow.data.Try
@@ -49,7 +50,8 @@ interface DataSource<F> : TC
             }
 
     // FIXME msq -
-    private fun fetchUsers(): List<UserEntity> =
+    @VisibleForTesting
+    fun fetchUsers(): List<UserEntity> =
             apiClient.users().execute().let { response ->
                 when (response.isSuccessful)
                 {
